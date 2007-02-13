@@ -206,8 +206,8 @@ syn region smartyStringDouble matchgroup=Constant start=+"+  end=+"+  contains=s
 syn match smartyGlue "\.\|\->"
 
 
-syn region smartyModifier matchgroup=Statement start=+|+   end=+:\|\>+
-syn region smartyParameter matchgroup=Statement start=+:+   end=+\>+
+syn region smartyModifier  matchgroup=Statement start=+|+   end=+\ze:\|\>+
+syn region smartyParameter matchgroup=Statement start=+:+   end=+\s\|}+ contains=smartyVariable, smartyDollarSign, smartyGlue, smartyInBracket, smartyStringDouble
 syn region smartyZone     matchgroup=Statement   start="{"   end="}" contains=smartyParameter, smartyProperty, smartyGlue, smartyModifier, smartyDollarSign, smartyInBracket, smartyStringDouble, smartyVariable, smartyString, smartyBlock, smartyTagName, smartyConstant, smartyInFunc
 syn region smartyComment  matchgroup=Comment   start="{\*" end="\*}"
 
